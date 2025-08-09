@@ -1,5 +1,12 @@
 # SignToolEx
 
+cmake -S . -B build32 -A Win32
+cmake --build build32 --config Release
+
+cmake -S . -B build64 -A x64
+cmake --build build64 --config Release
+
+```
 SignToolEx uses Microsoft Detours hooking library to hijack "signtool.exe" and modify
 expired code-signing certificates to appear valid, allowing to codesign without changing
 system clock. This allows expired (leaked) certificates to be used for code-signing but
